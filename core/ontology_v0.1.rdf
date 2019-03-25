@@ -1,0 +1,25 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <http://schema.org/> .
+@prefix bo: <http://ontology.bonsai.uno/core#> .
+
+<http://ontology.bonsai.uno/core>
+  a owl:Ontology ;
+  dc:title "The BONSAI ontology"@en ;
+  dc:description "The BONSAI ontologies provides elements of description for product footprint concepts defined in the bonsai.uno data base"@en ;
+  foaf:homepage <http://ontology.bonsai.uno/core/documentation.html> ;
+  ns0:preferredNamespacePrefix "bo" ;
+  ns0:preferredNamespaceUri "http://ontology.bonsai.uno/core#" ;
+  rdfs:isDefinedBy <http://ontology.bonsai.uno/core/ontology_v0.1.rdf> ;
+  owl:versionInfo "Version 0.1 - 2019-03-25"@en ;
+  dc:modified "2019-03-25"^^xsd:date ;
+  dc:publisher "bonsai.uno" ;
+  dc:creator <http://bonsai.uno/foaf/bonsai.rdf#bonsai> ;
+  dc:contributor "Matteo Lissandrini", "insert name here", "insert some other name here" ;
+  cc:license <http://creativecommons.org/licenses/by/3.0/> ;
+  rdfs:comment """First ever version 0.1 :
+                  Will channge!
+               """@en .
