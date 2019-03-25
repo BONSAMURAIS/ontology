@@ -1,0 +1,130 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <http://schema.org/> .
+@prefix bont: <http://ontology.bonsai.uno/core#> .
+@prefix om2: <http://www.ontology-of-units-of-measure.org/resource/om-2/>
+
+
+##############################################
+
+Metadata
+
+##############################################
+
+
+
+<http://ontology.bonsai.uno/core>
+  a owl:Ontology ;
+  dc:title "The BONSAI ontology"@en ;
+  dc:description "The BONSAI ontologies provides elements of description for product footprint concepts defined in the bonsai.uno data base"@en ;
+  foaf:homepage <http://ontology.bonsai.uno/core/documentation.html> ;
+  ns0:preferredNamespacePrefix "bont" ;
+  ns0:preferredNamespaceUri "http://ontology.bonsai.uno/core#" ;
+  rdfs:isDefinedBy <http://ontology.bonsai.uno/core/ontology_v0.1.rdf> ;
+  owl:versionInfo "Version 0.1 - 2019-03-25"@en ;
+  dc:modified "2019-03-25"^^xsd:date ;
+  dc:publisher "bonsai.uno" ;
+  dc:creator <http://bonsai.uno/foaf/bonsai.rdf#bonsai> ;
+  dc:contributor "Matteo Lissandrini",  "Massimo Pizzol", "Agneta Ghose" ;
+  cc:license <http://creativecommons.org/licenses/by/3.0/> ;
+  rdfs:comment """First ever version 0.1 :
+                  Will channge!
+               """@en .
+
+
+
+##############################################
+
+Classes definitions
+
+##############################################
+
+
+<http://ontology.bonsai.uno/core#Activty>
+  a owl:Class ;
+  rdfs:comment "Activity is the act of doing siomething which is defined both spatially and temporally."@en ;
+  rdfs:label "Activity"@en ;
+  rdfs:subClassOf skos:ConceptScheme .
+
+
+<http://ontology.bonsai.uno/core#FlowObject>
+  a owl:Class ;
+  rdfs:comment "An entity that is produced or consumed by an activity."@en ;
+  rdfs:label "Flow Object"@en ;
+  rdfs:subClassOf skos:ConceptScheme .
+
+
+<http://ontology.bonsai.uno/core#Flow>
+  a owl:Class ;
+  rdfs:comment "An observation representing a quantity of Flow Object that is consumed as input from or produced as output of an Activity."@en ;
+  rdfs:label "Flow"@en ;
+  rdfs:subClassOf skos:ConceptScheme, om2:Quantity .
+
+
+<http://ontology.bonsai.uno/core#Agent>
+  a owl:Class ;
+  rdfs:comment "An entity that performs an acitivity, usually it has a specific location."@en ;
+  rdfs:label "Agent"@en ;
+  rdfs:subClassOf skos:ConceptScheme .
+
+
+<http://ontology.bonsai.uno/core#StockAccumulation>
+  a owl:Class ;
+  rdfs:comment "Type of activty where one or many flow objects are stored"@en ;
+  rdfs:label "Stock Accumulation"@en ;
+  rdfs:subClassOf bont:Activity .
+
+
+
+xsd:integer a rdfs:Datatype .
+xsd:float a rdfs:Datatype .
+
+
+
+
+##############################################
+
+Property definitions
+
+##############################################
+
+
+<http://ontology.bonsai.uno/core#inputOf>
+  a owl:FunctionalProperty, owl:ObjectProperty ;
+  rdfs:comment "A flow that is input of an activity."@en ;
+  rdfs:domain <http://ontology.bonsai.uno/core#Flow> ;
+  rdfs:label "input of"@en ;
+  rdfs:range <http://ontology.bonsai.uno/core#Activity> .
+
+
+<http://ontology.bonsai.uno/core#outputOf>
+  a owl:FunctionalProperty, owl:ObjectProperty ;
+  rdfs:comment "A flow that is output of an activity."@en ;
+  rdfs:domain <http://ontology.bonsai.uno/core#Flow> ;
+  rdfs:label "output of"@en ;
+  rdfs:range <http://ontology.bonsai.uno/core#Activity> .
+
+<http://ontology.bonsai.uno/core#objectType>
+  a owl:FunctionalProperty, owl:ObjectProperty ;
+  rdfs:comment "Type of the Flow Object that is consumed or produced."@en ;
+  rdfs:domain <http://ontology.bonsai.uno/core#Flow> ;
+  rdfs:label "object type"@en ;
+  rdfs:range <http://ontology.bonsai.uno/core#FlowObject> ;
+  rdfs:subPropertyOf dc:type .
+
+
+<http://ontology.bonsai.uno/core#performs>
+  a owl:ObjectProperty ;
+  rdfs:comment "The activity performed by the agent."@en ;
+  rdfs:domain <http://ontology.bonsai.uno/core#Agent> ;
+  rdfs:label "performs"@en ;
+  rdfs:range <http://ontology.bonsai.uno/core#Activity> .
+
+
+
