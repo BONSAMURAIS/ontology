@@ -9,7 +9,7 @@
 @prefix schema: <http://schema.org/> .
 @prefix bont: <http://ontology.bonsai.uno/core#> .
 @prefix om2: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
-
+@prefix time: <http://www.w3.org/2006/time#> .
 
 ##############################################
 
@@ -48,8 +48,15 @@
 
 <http://ontology.bonsai.uno/core#Activty>
   a owl:Class ;
-  rdfs:comment "Activity is the act of doing siomething which is defined both spatially and temporally."@en ;
+  rdfs:comment "Activity is the act of doing something which is defined both spatially and temporally. Includes both human activities and environmental mechanisms."@en ;
   rdfs:label "Activity"@en ;
+  rdfs:subClassOf skos:ConceptScheme .
+
+
+<http://ontology.bonsai.uno/core#ActivtyType>
+  a owl:Class ;
+  rdfs:comment "The type of an activity, e.g, stock accumulation, steel production, etc."@en ;
+  rdfs:label "Activity Type"@en ;
   rdfs:subClassOf skos:ConceptScheme .
 
 
@@ -72,13 +79,6 @@
   rdfs:comment "An entity that performs an acitivity, usually it has a specific location."@en ;
   rdfs:label "Agent"@en ;
   rdfs:subClassOf skos:ConceptScheme .
-
-
-<http://ontology.bonsai.uno/core#StockAccumulation>
-  a owl:Class ;
-  rdfs:comment "Type of activty where one or many flow objects are stored"@en ;
-  rdfs:label "Stock Accumulation"@en ;
-  rdfs:subClassOf bont:Activity .
 
 
 
@@ -118,6 +118,14 @@ xsd:float a rdfs:Datatype .
   rdfs:range <http://ontology.bonsai.uno/core#FlowObject> ;
   rdfs:subPropertyOf dc:type .
 
+<http://ontology.bonsai.uno/core#activityType>
+  a owl:ObjectProperty ;
+  rdfs:comment "Type of the Activity that is peformed."@en ;
+  rdfs:domain <http://ontology.bonsai.uno/core#Activity> ;
+  rdfs:label "object type"@en ;
+  rdfs:range <http://ontology.bonsai.uno/core#ActivityType> ;
+  rdfs:subPropertyOf dc:type .
+
 
 <http://ontology.bonsai.uno/core#performs>
   a owl:ObjectProperty ;
@@ -125,6 +133,27 @@ xsd:float a rdfs:Datatype .
   rdfs:domain <http://ontology.bonsai.uno/core#Agent> ;
   rdfs:label "performs"@en ;
   rdfs:range <http://ontology.bonsai.uno/core#Activity> .
+
+
+
+<http://ontology.bonsai.uno/core#temporalExtent>
+  a owl:FunctionalProperty, owl:ObjectProperty ;
+  rdfs:comment "Temporal extent for an activity."@en ;
+  rdfs:domain <http://ontology.bonsai.uno/core#Activity> ;
+  rdfs:label "temporal extent"@en ;
+  rdfs:range time:ProperInterval .
+
+
+<http://ontology.bonsai.uno/core#location>
+  a owl:FunctionalProperty, owl:ObjectProperty ;
+  rdfs:comment "The location in which an activity took place."@en ;
+  rdfs:domain <http://ontology.bonsai.uno/core#Activity> ;
+  rdfs:label "location"@en ;
+  rdfs:range schema:location .
+
+
+
+
 
 
 
