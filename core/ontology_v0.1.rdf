@@ -18,7 +18,7 @@
   dc:modified "2019-03-25"^^xsd:date ;
   dc:publisher "bonsai.uno" ;
   dc:creator <http://bonsai.uno/foaf/bonsai.rdf#bonsai> ;
-  dc:contributor "Matteo Lissandrini", "Massimo Pizzol", "insert some other name here" ;
+  dc:contributor "Matteo Lissandrini", "Massimo Pizzol", "Agneta Ghose" ;
   cc:license <http://creativecommons.org/licenses/by/3.0/> ;
   rdfs:comment """First ever version 0.1 :
                   Will change!
