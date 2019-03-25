@@ -11,7 +11,7 @@
     <dc:title xml:lang="en">The BONSAI ontology</dc:title>
     <dc:description xml:lang="en">The BONSAI ontologies provides elements of description for product footprint concepts defined in the bonsai.uno data base</dc:description>
     <foaf:homepage rdf:resource="http://ontology.bonsai.uno/core/documentation.html"/>
-    <ns0:preferredNamespacePrefix>bo</ns0:preferredNamespacePrefix>
+    <ns0:preferredNamespacePrefix>bont</ns0:preferredNamespacePrefix>
     <ns0:preferredNamespaceUri>http://ontology.bonsai.uno/core#</ns0:preferredNamespaceUri>
     <rdfs:isDefinedBy rdf:resource="http://ontology.bonsai.uno/core/ontology_v0.1.rdf"/>
     <owl:versionInfo xml:lang="en">Version 0.1 - 2019-03-25</owl:versionInfo>
@@ -26,5 +26,74 @@
                   Will channge!
                </rdfs:comment>
   </owl:Ontology>
+
+  <owl:Class rdf:about="http://ontology.bonsai.uno/core#Activty">
+    <rdfs:comment xml:lang="en">Activity is the act of doing siomething which is defined both spatially and temporally.</rdfs:comment>
+    <rdfs:label xml:lang="en">Activity</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.bonsai.uno/core#FlowObject">
+    <rdfs:comment xml:lang="en">An entity that is produced or consumed by an activity.</rdfs:comment>
+    <rdfs:label xml:lang="en">Flow Object</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.bonsai.uno/core#Flow">
+    <rdfs:comment xml:lang="en">An observation representing a quantity of Flow Object that is consumed as input from or produced as output of an Activity.</rdfs:comment>
+    <rdfs:label xml:lang="en">Flow</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontology-of-units-of-measure.org/resource/om-2/Quantity"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.bonsai.uno/core#Agent">
+    <rdfs:comment xml:lang="en">An entity that performs an acitivity, usually it has a specific location.</rdfs:comment>
+    <rdfs:label xml:lang="en">Agent</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://ontology.bonsai.uno/core#StockAccumulation">
+    <rdfs:comment xml:lang="en">Type of activty where one or many flow objects are stored</rdfs:comment>
+    <rdfs:label xml:lang="en">Stock Accumulation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ontology.bonsai.uno/core#Activity"/>
+  </owl:Class>
+
+  <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#integer">
+  </rdfs:Datatype>
+
+  <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#float">
+  </rdfs:Datatype>
+
+  <owl:FunctionalProperty rdf:about="http://ontology.bonsai.uno/core#inputOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A flow that is input of an activity.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://ontology.bonsai.uno/core#Flow"/>
+    <rdfs:label xml:lang="en">input of</rdfs:label>
+    <rdfs:range rdf:resource="http://ontology.bonsai.uno/core#Activity"/>
+  </owl:FunctionalProperty>
+
+  <owl:FunctionalProperty rdf:about="http://ontology.bonsai.uno/core#outputOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">A flow that is output of an activity.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://ontology.bonsai.uno/core#Flow"/>
+    <rdfs:label xml:lang="en">output of</rdfs:label>
+    <rdfs:range rdf:resource="http://ontology.bonsai.uno/core#Activity"/>
+  </owl:FunctionalProperty>
+
+  <owl:FunctionalProperty rdf:about="http://ontology.bonsai.uno/core#objectType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Type of the Flow Object that is consumed or produced.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://ontology.bonsai.uno/core#Flow"/>
+    <rdfs:label xml:lang="en">object type</rdfs:label>
+    <rdfs:range rdf:resource="http://ontology.bonsai.uno/core#FlowObject"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/type"/>
+  </owl:FunctionalProperty>
+
+  <owl:ObjectProperty rdf:about="http://ontology.bonsai.uno/core#performs">
+    <rdfs:comment xml:lang="en">The activity performed by the agent.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://ontology.bonsai.uno/core#Agent"/>
+    <rdfs:label xml:lang="en">performs</rdfs:label>
+    <rdfs:range rdf:resource="http://ontology.bonsai.uno/core#Activity"/>
+  </owl:ObjectProperty>
 
 </rdf:RDF>

@@ -8,12 +8,12 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix schema: <http://schema.org/> .
 @prefix bont: <http://ontology.bonsai.uno/core#> .
-@prefix om2: <http://www.ontology-of-units-of-measure.org/resource/om-2/>
+@prefix om2: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
 
 
 ##############################################
 
-Metadata
+# Metadata
 
 ##############################################
 
@@ -41,7 +41,7 @@ Metadata
 
 ##############################################
 
-Classes definitions
+# Classes definitions
 
 ##############################################
 
@@ -90,7 +90,7 @@ xsd:float a rdfs:Datatype .
 
 ##############################################
 
-Property definitions
+# Property definitions
 
 ##############################################
 
