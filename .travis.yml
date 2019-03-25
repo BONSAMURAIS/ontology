@@ -17,6 +17,6 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: rsync -r --quiet --delete-after core/ $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_DIRECTORY
+  script: rsync -r --quiet --delete-after core/ $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_DIRECTORY/core
   on:
     branch: master
