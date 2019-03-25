@@ -19,8 +19,8 @@
     <dc:publisher>bonsai.uno</dc:publisher>
     <dc:creator rdf:resource="http://bonsai.uno/foaf/bonsai.rdf#bonsai"/>
     <dc:contributor>Matteo Lissandrini</dc:contributor>
-    <dc:contributor>insert name here</dc:contributor>
-    <dc:contributor>insert some other name here</dc:contributor>
+    <dc:contributor>Massimo Pizzol</dc:contributor>
+    <dc:contributor>Agneta Ghose</dc:contributor>
     <cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
     <rdfs:comment xml:lang="en">First ever version 0.1 :
                   Will channge!
@@ -28,4 +28,3 @@
   </owl:Ontology>
 
 </rdf:RDF>
-
