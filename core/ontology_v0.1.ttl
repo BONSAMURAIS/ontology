@@ -71,7 +71,7 @@
   a owl:Class ;
   rdfs:comment "An observation representing a quantity of Flow Object that is consumed as input from or produced as output of an Activity."@en ;
   rdfs:label "Flow"@en ;
-  rdfs:subClassOf skos:ConceptScheme, om2:Quantity .
+  rdfs:subClassOf skos:ConceptScheme, om2:Measure .
 
 
 <http://ontology.bonsai.uno/core#Agent>
@@ -79,6 +79,22 @@
   rdfs:comment "An entity that performs an activity, usually it has a specific location."@en ;
   rdfs:label "Agent"@en ;
   rdfs:subClassOf skos:ConceptScheme .
+
+
+
+<http://ontology.bonsai.uno/core#ReferenceUnit>
+  a owl:Class ;
+  rdfs:comment "The quantity to which the quantity of a Flow should be seen proportional to. This could be, for instance, 1 Year, or per tonne of steel."@en ;
+  rdfs:label "Reference Unit"@en ;
+  rdfs:subClassOf skos:ConceptScheme, om2:Measure .
+
+
+<http://ontology.bonsai.uno/core#BalanceableProperty>
+  a owl:Class ;
+  rdfs:comment "A balanceable property defines a type of quantity that should be balanced when input or output of an activity."@en ;
+  rdfs:label "Balanceable Property"@en ;
+  rdfs:subClassOf skos:ConceptScheme, om2:Quantity .
+
 
 
 
@@ -157,7 +173,7 @@ xsd:float a rdfs:Datatype .
 <http://ontology.bonsai.uno/core#location>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "The location in which an activity took place or agent is located."@en ;
-  rdfs:domain [ rdf:type owl:Class ;
+  rdfs:domain [ rdfs:type owl:Class ;
                    owl:unionOf ( bont:Activity,
                                  bont:Agent
                    ) ];
@@ -166,6 +182,20 @@ xsd:float a rdfs:Datatype .
 
 
 
+<http://ontology.bonsai.uno/core#proportionalTo>
+  a owl:FunctionalProperty, owl:ObjectProperty ;
+  rdfs:comment "The reference unit to which the quantity of the Flow is proportional."@en ;
+  rdfs:domain bont:Flow ;
+  rdfs:label "proportional to"@en ;
+  rdfs:range bont:ReferenceUnit .
+
+
+<http://ontology.bonsai.uno/core#referenceFlowObject>
+  a owl:FunctionalProperty, owl:ObjectProperty ;
+  rdfs:comment "The flow object referenced by the reference unit."@en ;
+  rdfs:domain bont:ReferenceUnit ;
+  rdfs:label "references flow object"@en ;
+  rdfs:range bont:FlowObject .
 
 
 
