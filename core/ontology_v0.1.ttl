@@ -122,7 +122,7 @@ xsd:float a rdfs:Datatype .
   a owl:ObjectProperty ;
   rdfs:comment "Type of the Activity that is performed."@en ;
   rdfs:domain <http://ontology.bonsai.uno/core#Activity> ;
-  rdfs:label "object type"@en ;
+  rdfs:label "activity type"@en ;
   rdfs:range <http://ontology.bonsai.uno/core#ActivityType> ;
   rdfs:subPropertyOf dc:type .
 
