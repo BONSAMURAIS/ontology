@@ -34,7 +34,7 @@
   dc:contributor "Matteo Lissandrini",  "Massimo Pizzol", "Agneta Ghose" ;
   cc:license <http://creativecommons.org/licenses/by/3.0/> ;
   rdfs:comment """First ever version 0.1 :
-                  Will channge!
+                  Will change!
                """@en .
 
 
@@ -76,7 +76,7 @@
 
 <http://ontology.bonsai.uno/core#Agent>
   a owl:Class ;
-  rdfs:comment "An entity that performs an acitivity, usually it has a specific location."@en ;
+  rdfs:comment "An entity that performs an activity, usually it has a specific location."@en ;
   rdfs:label "Agent"@en ;
   rdfs:subClassOf skos:ConceptScheme .
 
@@ -120,7 +120,7 @@ xsd:float a rdfs:Datatype .
 
 <http://ontology.bonsai.uno/core#activityType>
   a owl:ObjectProperty ;
-  rdfs:comment "Type of the Activity that is peformed."@en ;
+  rdfs:comment "Type of the Activity that is performed."@en ;
   rdfs:domain <http://ontology.bonsai.uno/core#Activity> ;
   rdfs:label "object type"@en ;
   rdfs:range <http://ontology.bonsai.uno/core#ActivityType> ;
