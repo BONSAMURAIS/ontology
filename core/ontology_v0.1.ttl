@@ -118,6 +118,16 @@ xsd:float a rdfs:Datatype .
   rdfs:range <http://ontology.bonsai.uno/core#FlowObject> ;
   rdfs:subPropertyOf dc:type .
 
+
+<http://ontology.bonsai.uno/core#determiningFlow>
+  a owl:FunctionalProperty, owl:ObjectProperty ;
+  rdfs:comment "Specific flow object produced or consumed by an activity to deliver its primary function."@en ;
+  rdfs:domain <http://ontology.bonsai.uno/core#Activity> ;
+  rdfs:label "determining flow"@en ;
+  rdfs:range <http://ontology.bonsai.uno/core#Flow> .
+
+
+
 <http://ontology.bonsai.uno/core#activityType>
   a owl:ObjectProperty ;
   rdfs:comment "Type of the Activity that is performed."@en ;
