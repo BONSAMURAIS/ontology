@@ -174,7 +174,7 @@ xsd:float a rdfs:Datatype .
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "The location in which an activity took place or agent is located."@en ;
   rdfs:domain [ rdfs:type owl:Class ;
-                   owl:unionOf ( bont:Activity,
+                   owl:unionOf ( bont:Activity
                                  bont:Agent
                    ) ];
   rdfs:label "located at"@en ;
