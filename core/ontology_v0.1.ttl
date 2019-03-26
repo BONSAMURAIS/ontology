@@ -98,58 +98,58 @@ xsd:float a rdfs:Datatype .
 <http://ontology.bonsai.uno/core#inputOf>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "A flow that is input of an activity."@en ;
-  rdfs:domain <http://ontology.bonsai.uno/core#Flow> ;
+  rdfs:domain bont:Flow ;
   rdfs:label "input of"@en ;
-  rdfs:range <http://ontology.bonsai.uno/core#Activity> .
+  rdfs:range bont:Activity .
 
 
 <http://ontology.bonsai.uno/core#outputOf>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "A flow that is output of an activity."@en ;
-  rdfs:domain <http://ontology.bonsai.uno/core#Flow> ;
+  rdfs:domain bont:Flow ;
   rdfs:label "output of"@en ;
-  rdfs:range <http://ontology.bonsai.uno/core#Activity> .
+  rdfs:range bont:Activity .
 
 <http://ontology.bonsai.uno/core#objectType>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "Type of the Flow Object that is consumed or produced."@en ;
-  rdfs:domain <http://ontology.bonsai.uno/core#Flow> ;
+  rdfs:domain bont:Flow ;
   rdfs:label "object type"@en ;
-  rdfs:range <http://ontology.bonsai.uno/core#FlowObject> ;
+  rdfs:range bont:FlowObject ;
   rdfs:subPropertyOf dc:type .
 
 
 <http://ontology.bonsai.uno/core#determiningFlow>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "Specific flow object produced or consumed by an activity to deliver its primary function."@en ;
-  rdfs:domain <http://ontology.bonsai.uno/core#Activity> ;
+  rdfs:domain bont:Activity ;
   rdfs:label "determining flow"@en ;
-  rdfs:range <http://ontology.bonsai.uno/core#Flow> .
+  rdfs:range bont:Flow .
 
 
 
 <http://ontology.bonsai.uno/core#activityType>
   a owl:ObjectProperty ;
   rdfs:comment "Type of the Activity that is performed."@en ;
-  rdfs:domain <http://ontology.bonsai.uno/core#Activity> ;
+  rdfs:domain bont:Activity ;
   rdfs:label "activity type"@en ;
-  rdfs:range <http://ontology.bonsai.uno/core#ActivityType> ;
+  rdfs:range bont:ActivityType ;
   rdfs:subPropertyOf dc:type .
 
 
 <http://ontology.bonsai.uno/core#performs>
   a owl:ObjectProperty ;
   rdfs:comment "The activity performed by the agent."@en ;
-  rdfs:domain <http://ontology.bonsai.uno/core#Agent> ;
+  rdfs:domain bont:Agent ;
   rdfs:label "performs"@en ;
-  rdfs:range <http://ontology.bonsai.uno/core#Activity> .
+  rdfs:range bont:Activity .
 
 
 
 <http://ontology.bonsai.uno/core#temporalExtent>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "Temporal extent for an activity."@en ;
-  rdfs:domain <http://ontology.bonsai.uno/core#Activity> ;
+  rdfs:domain bont:Activity ;
   rdfs:label "temporal extent"@en ;
   rdfs:range time:ProperInterval .
 
@@ -157,7 +157,7 @@ xsd:float a rdfs:Datatype .
 <http://ontology.bonsai.uno/core#location>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "The location in which an activity took place."@en ;
-  rdfs:domain <http://ontology.bonsai.uno/core#Activity> ;
+  rdfs:domain bont:Activity ;
   rdfs:label "location"@en ;
   rdfs:range schema:location .
 
