@@ -156,9 +156,12 @@ xsd:float a rdfs:Datatype .
 
 <http://ontology.bonsai.uno/core#location>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "The location in which an activity took place."@en ;
-  rdfs:domain bont:Activity ;
-  rdfs:label "location"@en ;
+  rdfs:comment "The location in which an activity took place or agent is located."@en ;
+  rdfs:domain [ rdf:type owl:Class ;
+                   owl:unionOf ( bont:Activity,
+                                 bont:Agent
+                   ) ];
+  rdfs:label "located at"@en ;
   rdfs:range schema:location .
 
 
