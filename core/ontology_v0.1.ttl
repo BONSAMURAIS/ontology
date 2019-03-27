@@ -46,14 +46,14 @@
 ##############################################
 
 
-<http://ontology.bonsai.uno/core#Activty>
+<http://ontology.bonsai.uno/core#Activity>
   a owl:Class ;
   rdfs:comment "Activity is the act of doing something which is defined both spatially and temporally. Includes both human activities and environmental mechanisms."@en ;
   rdfs:label "Activity"@en ;
   rdfs:subClassOf skos:ConceptScheme .
 
 
-<http://ontology.bonsai.uno/core#ActivtyType>
+<http://ontology.bonsai.uno/core#ActivityType>
   a owl:Class ;
   rdfs:comment "The type of an activity, e.g, stock accumulation, steel production, etc."@en ;
   rdfs:label "Activity Type"@en ;
