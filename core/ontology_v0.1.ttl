@@ -48,7 +48,7 @@
 
 <http://ontology.bonsai.uno/core#Activity>
   a owl:Class ;
-  rdfs:comment "Activity is the act of doing something which is defined both spatially and temporally. Includes both human activities and environmental mechanisms."@en ;
+  rdfs:comment "Activity is the act of making or doing something which is defined both spatially and temporally. Includes both human activities and environmental mechanisms."@en ;
   rdfs:label "Activity"@en ;
   rdfs:subClassOf skos:ConceptScheme .
 
@@ -62,15 +62,15 @@
 
 <http://ontology.bonsai.uno/core#FlowObject>
   a owl:Class ;
-  rdfs:comment "An entity that is produced or consumed by an activity."@en ;
+  rdfs:comment "An entity that is produced or consumed by an activity or stored by a (stock accumulation) activity."@en ;
   rdfs:label "Flow Object"@en ;
   rdfs:subClassOf skos:ConceptScheme .
 
 
 <http://ontology.bonsai.uno/core#Flow>
   a owl:Class ;
-  rdfs:comment "An observation representing a quantity of Flow Object that is consumed as input from or produced as output of an Activity."@en ;
-  rdfs:label "Flow"@en ;
+  rdfs:comment ""@en ;
+  rdfs:label "Flow"@en ;An observation representing a quantity of Flow Object that is consumed as input or produced as output of an Activity.
   rdfs:subClassOf skos:ConceptScheme, om2:Measure .
 
 
@@ -91,7 +91,7 @@
 
 <http://ontology.bonsai.uno/core#BalanceableProperty>
   a owl:Class ;
-  rdfs:comment "A balanceable property defines a type of quantity that should be balanced when input or output of an activity."@en ;
+  rdfs:comment "A balanceable property is a Quantity for which the sum for all input flows must equal the sum for all output flows e.g. dry mass, water mass, energy, elemental mass, person-time, monetary value (when measured in the same valuation)."@en ;
   rdfs:label "Balanceable Property"@en ;
   rdfs:subClassOf skos:ConceptScheme, om2:Quantity .
 
@@ -137,7 +137,7 @@ xsd:float a rdfs:Datatype .
 
 <http://ontology.bonsai.uno/core#determiningFlow>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "Specific flow object produced or consumed by an activity to deliver its primary function."@en ;
+  rdfs:comment "Specific flow object produced or consumed by an activity for which a change in demand or supply will affect the activity level (such as its production volume or extent)."@en ;
   rdfs:domain bont:Activity ;
   rdfs:label "determining flow"@en ;
   rdfs:range bont:Flow .
