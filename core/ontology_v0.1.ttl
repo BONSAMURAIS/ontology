@@ -69,8 +69,8 @@
 
 <http://ontology.bonsai.uno/core#Flow>
   a owl:Class ;
-  rdfs:comment ""@en ;
-  rdfs:label "Flow"@en ;An observation representing a quantity of Flow Object that is consumed as input or produced as output of an Activity.
+  rdfs:comment "An observation representing a quantity of Flow Object that is consumed as input or produced as output of an Activity."@en ;
+  rdfs:label "Flow"@en ;
   rdfs:subClassOf skos:ConceptScheme, om2:Measure .
 
 
