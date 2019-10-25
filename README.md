@@ -8,5 +8,5 @@ Discussion, examples, and development information can be found in the [BONSAI-on
 
 ## Core ontology
 
-The folder `core/` will be synced to `https://ontology.bonsai.uno/core`.
+The folder `core/` will be synced to [https://ontology.bonsai.uno/core](https://ontology.bonsai.uno/core) .
 It contains all the schema definition of the core BONSAI ontology for describing flows, activities, flow objects, etc.
