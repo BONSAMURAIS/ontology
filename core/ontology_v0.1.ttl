@@ -33,7 +33,7 @@
   dc:creator <http://bonsai.uno/foaf/bonsai.rdf#bonsai> ;
   dc:contributor "Matteo Lissandrini", "Agneta Ghose", "Bo Weidemma" ;
   cc:license <http://creativecommons.org/licenses/by/3.0/> ;
-  rdfs:comment """Modified version 0.1 :
+  rdfs:comment """Bonsai ontology version 0.2 :
                 based on changes discussed on Jan2020!
                """@en .
 
