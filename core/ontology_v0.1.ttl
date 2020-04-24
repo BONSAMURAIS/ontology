@@ -31,10 +31,10 @@
   dc:modified "2019-03-25"^^xsd:date ;
   dc:publisher "bonsai.uno" ;
   dc:creator <http://bonsai.uno/foaf/bonsai.rdf#bonsai> ;
-  dc:contributor "Matteo Lissandrini", "Agneta Ghose", "Bo Weidemma" ;
+  dc:contributor "Matteo Lissandrini",  "Massimo Pizzol", "Agneta Ghose" ;
   cc:license <http://creativecommons.org/licenses/by/3.0/> ;
-  rdfs:comment """Bonsai ontology version 0.2 :
-                based on changes discussed on Jan2020!
+  rdfs:comment """First ever version 0.1 :
+                  Will change!
                """@en .
 
 
@@ -71,20 +71,7 @@
   a owl:Class ;
   rdfs:comment "An observation representing a quantity of Flow Object that is consumed as input or produced as output of an Activity."@en ;
   rdfs:label "Flow"@en ;
-  rdfs:subClassOf skos:ConceptScheme .
-
-<http://ontology.bonsai.uno/core#BalanceableProperty>
-  a owl:Class ;
-  rdfs:comment "A quantity for which the sum for all input flows must equal the sum for all output flows."@en ;
-  rdfs:label "Balanceable Property"@en ;
   rdfs:subClassOf skos:ConceptScheme, om2:Measure .
-
-
-<http://ontology.bonsai.uno/core#BalanceablePropertyType>
-  a owl:Class ;
-  rdfs:comment "A quantity type for which the sum for all input flows must equal the sum for all output flows, such as dry mass, wet mass, elemental mass, person-time, monetary value."@en ;
-  rdfs:label "Balanceable Property Type"@en ;
-  rdfs:subClassOf skos:ConceptScheme, om2:Quantity .
 
 
 <http://ontology.bonsai.uno/core#Agent>
@@ -100,6 +87,13 @@
   rdfs:comment "The quantity to which the quantity of a Flow should be seen proportional to. This could be, for instance, 1 Year, or per tonne of steel."@en ;
   rdfs:label "Reference Unit"@en ;
   rdfs:subClassOf skos:ConceptScheme, om2:Measure .
+
+
+<http://ontology.bonsai.uno/core#BalanceableProperty>
+  a owl:Class ;
+  rdfs:comment "A balanceable property is a Quantity for which the sum for all input flows must equal the sum for all output flows e.g. dry mass, water mass, energy, elemental mass, person-time, monetary value (when measured in the same valuation)."@en ;
+  rdfs:label "Balanceable Property"@en ;
+  rdfs:subClassOf skos:ConceptScheme, om2:Quantity .
 
 
 
@@ -191,23 +185,9 @@ xsd:float a rdfs:Datatype .
 <http://ontology.bonsai.uno/core#proportionalTo>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "The reference unit to which the quantity of the Flow is proportional."@en ;
-  rdfs:domain bont:BalanceableProperty ;
+  rdfs:domain bont:Flow ;
   rdfs:label "proportional to"@en ;
   rdfs:range bont:ReferenceUnit .
-
-<http://ontology.bonsai.uno/core#hasProperty>
-  a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "The reference unit to which the quantity of the Flow is proportional."@en ;
-  rdfs:domain bont:Flow ;
-  rdfs:label "has property"@en ;
-  rdfs:range bont:BalanceableProperty . 
-
-<http://ontology.bonsai.uno/core#propertyType>
-  a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "The reference unit to which the quantity of the Flow is proportional."@en ;
-  rdfs:domain bont:BalanceableProperty ;
-  rdfs:label "property type"@en ;
-  rdfs:range bont:BalanceablePropertyType .
 
 
 <http://ontology.bonsai.uno/core#referenceFlowObject>
@@ -216,7 +196,3 @@ xsd:float a rdfs:Datatype .
   rdfs:domain bont:ReferenceUnit ;
   rdfs:label "references flow object"@en ;
   rdfs:range bont:FlowObject .
-
-
-
-
