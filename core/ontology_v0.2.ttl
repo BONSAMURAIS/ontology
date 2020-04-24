@@ -195,16 +195,16 @@ xsd:float a rdfs:Datatype .
   rdfs:label "proportional to"@en ;
   rdfs:range bont:ReferenceUnit .
 
-<http://ontology.bonsai.uno/core#hasProperty>
+<http://ontology.bonsai.uno/core#hasBalanceableProperty>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "The reference unit to which the quantity of the Flow is proportional."@en ;
+  rdfs:comment "The Balanceable property refers to the measure (and quantity) of the flows that follow the law of conservation. Eg: Mass, Energy. This does not include units such as volume, number of units, etc."@en ;
   rdfs:domain bont:Flow ;
-  rdfs:label "has property"@en ;
+  rdfs:label "has balanceable property"@en ;
   rdfs:range bont:BalanceableProperty . 
 
 <http://ontology.bonsai.uno/core#propertyType>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "The reference unit to which the quantity of the Flow is proportional."@en ;
+  rdfs:comment "refers to types of quantitites that follow the law of conservation."@en ;
   rdfs:domain bont:BalanceableProperty ;
   rdfs:label "property type"@en ;
   rdfs:range bont:BalanceablePropertyType .
