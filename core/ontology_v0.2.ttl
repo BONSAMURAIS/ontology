@@ -64,7 +64,7 @@
   a owl:Class ;
   rdfs:comment "An entity that is produced or consumed by an activity or stored by a (stock accumulation) activity."@en ;
   rdfs:label "Flow Object"@en ;
-  rdfs:subClassOf skos:ConceptScheme .
+  rdfs:subClassOf skos:ConceptScheme, om2:Measure  .
 
 
 <http://ontology.bonsai.uno/core#Flow>
