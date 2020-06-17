@@ -117,7 +117,7 @@ xsd:float a rdfs:Datatype .
 ##############################################
 
 
-<http://ontology.bonsai.uno/core#inputOf>
+<http://ontology.bonsai.uno/core#isInputOf>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "A flow that is input of an activity."@en ;
   rdfs:domain bont:Flow ;
@@ -125,14 +125,14 @@ xsd:float a rdfs:Datatype .
   rdfs:range bont:Activity .
 
 
-<http://ontology.bonsai.uno/core#outputOf>
+<http://ontology.bonsai.uno/core#isOutputOf>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "A flow that is output of an activity."@en ;
   rdfs:domain bont:Flow ;
   rdfs:label "output of"@en ;
   rdfs:range bont:Activity .
 
-<http://ontology.bonsai.uno/core#objectType>
+<http://ontology.bonsai.uno/core#hasObjectType>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "Type of the Flow Object that is consumed or produced."@en ;
   rdfs:domain bont:Flow ;
@@ -141,7 +141,7 @@ xsd:float a rdfs:Datatype .
   rdfs:subPropertyOf dc:type .
 
 
-<http://ontology.bonsai.uno/core#determiningFlow>
+<http://ontology.bonsai.uno/core#hasDeterminingFlow>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "Specific flow object produced or consumed by an activity for which a change in demand or supply will affect the activity level (such as its production volume or extent)."@en ;
   rdfs:domain bont:Activity ;
@@ -150,7 +150,7 @@ xsd:float a rdfs:Datatype .
 
 
 
-<http://ontology.bonsai.uno/core#activityType>
+<http://ontology.bonsai.uno/core#hasActivityType>
   a owl:ObjectProperty ;
   rdfs:comment "Type of the Activity that is performed."@en ;
   rdfs:domain bont:Activity ;
@@ -168,7 +168,7 @@ xsd:float a rdfs:Datatype .
 
 
 
-<http://ontology.bonsai.uno/core#temporalExtent>
+<http://ontology.bonsai.uno/core#hasTemporalExtent>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "Temporal extent for an activity."@en ;
   rdfs:domain bont:Activity ;
@@ -176,7 +176,7 @@ xsd:float a rdfs:Datatype .
   rdfs:range time:ProperInterval .
 
 
-<http://ontology.bonsai.uno/core#location>
+<http://ontology.bonsai.uno/core#hasLocation>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "The location in which an activity took place or agent is located."@en ;
   rdfs:domain [ rdfs:type owl:Class ;
@@ -188,7 +188,7 @@ xsd:float a rdfs:Datatype .
 
 
 
-<http://ontology.bonsai.uno/core#proportionalTo>
+<http://ontology.bonsai.uno/core#isProportionalTo>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "The reference unit to which the quantity of the Flow is proportional."@en ;
   rdfs:domain bont:BalanceableProperty ;
@@ -202,7 +202,7 @@ xsd:float a rdfs:Datatype .
   rdfs:label "has balanceable property"@en ;
   rdfs:range bont:BalanceableProperty . 
 
-<http://ontology.bonsai.uno/core#propertyType>
+<http://ontology.bonsai.uno/core#hasPropertyType>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "refers to types of quantitites that follow the law of conservation."@en ;
   rdfs:domain bont:BalanceableProperty ;
@@ -210,7 +210,7 @@ xsd:float a rdfs:Datatype .
   rdfs:range bont:BalanceablePropertyType .
 
 
-<http://ontology.bonsai.uno/core#referenceFlowObject>
+<http://ontology.bonsai.uno/core#hasReferenceFlowObject>
   a owl:FunctionalProperty, owl:ObjectProperty ;
   rdfs:comment "The flow object referenced by the reference unit."@en ;
   rdfs:domain bont:ReferenceUnit ;
