@@ -48,48 +48,49 @@
 
 <http://ontology.bonsai.uno/core#Activity>
   a owl:Class ;
-  rdfs:comment "Activity is the act of making or doing something which is defined both spatially and temporally. Includes both human activities and environmental mechanisms."@en ;
+  rdfs:comment "Activity is the act of making or doing something which is defined both spatially and temporally. This is one of the identifying dimensions of a datapoint. This class defines multiple properties on the type and direction of flows. ‘Process’ is a commonly used synonym in other LCA databases."@en ;
   rdfs:label "Activity"@en ;
   rdfs:subClassOf skos:ConceptScheme .
 
 
 <http://ontology.bonsai.uno/core#ActivityType>
   a owl:Class ;
-  rdfs:comment "The type of an activity, e.g, stock accumulation, steel production, etc."@en ;
+  rdfs:comment "The type of an activity, e.g, stock accumulation, steel production, etc. This class includes the labels of activities. Includes both human activities and environmental mechanisms."@en ;
   rdfs:label "Activity Type"@en ;
   rdfs:subClassOf skos:ConceptScheme .
 
 
-<http://ontology.bonsai.uno/core#FlowObject>
-  a owl:Class ;
-  rdfs:comment "An entity that is produced or consumed by an activity or stored by a (stock accumulation) activity."@en ;
-  rdfs:label "Flow Object"@en ;
-  rdfs:subClassOf skos:ConceptScheme, om2:Measure  .
-
-
 <http://ontology.bonsai.uno/core#Flow>
   a owl:Class ;
-  rdfs:comment "An observation representing a quantity of Flow Object that is consumed as input or produced as output of an Activity."@en ;
+  rdfs:comment " An input or output of an entity to or from an instance of an Activity or a directional exchange of an entity between two instances of Activity. This class contains the quantity of the entity (Flow Object) that is consumed as input or produced as output of an Activity."@en ;
   rdfs:label "Flow"@en ;
+  rdfs:subClassOf skos:ConceptScheme, om2:Measure .
+
+
+<http://ontology.bonsai.uno/core#FlowObject>
+  a owl:Class ;
+  rdfs:comment "This class includes the labels of entities that are produced or consumed by an activity or added to or removed from a stock accumulation."@en ;
+  rdfs:label "Flow Object"@en ;
   rdfs:subClassOf skos:ConceptScheme .
+
 
 <http://ontology.bonsai.uno/core#BalanceableProperty>
   a owl:Class ;
-  rdfs:comment "A quantity for which the sum for all input flows must equal the sum for all output flows."@en ;
+  rdfs:comment "A quantity for which the sum for all input flows must equal the sum for all output flows. A quantity that follows a conservation law. Balanceable properties are particularly relevant for validating the completeness and consistency of an Activity description or a database of such activities. "@en ;
   rdfs:label "Balanceable Property"@en ;
   rdfs:subClassOf skos:ConceptScheme, om2:Measure .
 
 
 <http://ontology.bonsai.uno/core#BalanceablePropertyType>
   a owl:Class ;
-  rdfs:comment "A quantity type for which the sum for all input flows must equal the sum for all output flows, such as dry mass, wet mass, elemental mass, person-time, monetary value."@en ;
+  rdfs:comment "Contains the instances of BalanceableProperty such as dry mass, wet mass, elemental mass, person-time, monetary value."@en ;
   rdfs:label "Balanceable Property Type"@en ;
   rdfs:subClassOf skos:ConceptScheme, om2:Quantity .
 
 
 <http://ontology.bonsai.uno/core#Agent>
   a owl:Class ;
-  rdfs:comment "An entity that performs an activity, usually it has a specific location."@en ;
+  rdfs:comment "An entity (person or thing) that performs an activity, usually it has a specific location."@en ;
   rdfs:label "Agent"@en ;
   rdfs:subClassOf skos:ConceptScheme .
 
@@ -97,7 +98,7 @@
 
 <http://ontology.bonsai.uno/core#ReferenceUnit>
   a owl:Class ;
-  rdfs:comment "The quantity to which the quantity of a Flow should be seen proportional to. This could be, for instance, 1 Year, or per tonne of steel."@en ;
+  rdfs:comment " The measure to which the numeric value representing the measure of a Flow is expressed 'in proportion to'. In LCA, the term ‘Functional Unit’ is defined as a common ReferenceUnit for all activities in an LCA study."@en ;
   rdfs:label "Reference Unit"@en ;
   rdfs:subClassOf skos:ConceptScheme, om2:Measure .
 
@@ -119,7 +120,7 @@ xsd:float a rdfs:Datatype .
 
 <http://ontology.bonsai.uno/core#isInputOf>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "A flow that is input of an activity."@en ;
+  rdfs:comment "Specifies the Activity that a Flow is an input to."@en ;
   rdfs:domain bont:Flow ;
   rdfs:label "input of"@en ;
   rdfs:range bont:Activity .
@@ -127,14 +128,14 @@ xsd:float a rdfs:Datatype .
 
 <http://ontology.bonsai.uno/core#isOutputOf>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "A flow that is output of an activity."@en ;
+  rdfs:comment "Specifies the Activity that a Flow is an output of."@en ;
   rdfs:domain bont:Flow ;
   rdfs:label "output of"@en ;
   rdfs:range bont:Activity .
 
 <http://ontology.bonsai.uno/core#hasObjectType>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "Type of the Flow Object that is consumed or produced."@en ;
+  rdfs:comment "Specifies the Flow object consumed or produced."@en ;
   rdfs:domain bont:Flow ;
   rdfs:label "object type"@en ;
   rdfs:range bont:FlowObject ;
@@ -143,7 +144,7 @@ xsd:float a rdfs:Datatype .
 
 <http://ontology.bonsai.uno/core#hasDeterminingFlow>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "Specific flow object produced or consumed by an activity for which a change in demand or supply will affect the activity level (such as its production volume or extent)."@en ;
+  rdfs:comment "Specifies a specific flow object produced or consumed by an activity for which a change in demand or supply will affect the activity level (such as its production volume or extent)."@en ;
   rdfs:domain bont:Activity ;
   rdfs:label "determining flow"@en ;
   rdfs:range bont:Flow .
@@ -152,7 +153,7 @@ xsd:float a rdfs:Datatype .
 
 <http://ontology.bonsai.uno/core#hasActivityType>
   a owl:ObjectProperty ;
-  rdfs:comment "Type of the Activity that is performed."@en ;
+  rdfs:comment "Specifies the ActivityType that is an instance of the Activity."@en ;
   rdfs:domain bont:Activity ;
   rdfs:label "activity type"@en ;
   rdfs:range bont:ActivityType ;
@@ -161,7 +162,7 @@ xsd:float a rdfs:Datatype .
 
 <http://ontology.bonsai.uno/core#performs>
   a owl:ObjectProperty ;
-  rdfs:comment "The activity performed by the agent."@en ;
+  rdfs:comment "Specifies the Agent who performs an activity."@en ;
   rdfs:domain bont:Agent ;
   rdfs:label "performs"@en ;
   rdfs:range bont:Activity .
@@ -170,7 +171,7 @@ xsd:float a rdfs:Datatype .
 
 <http://ontology.bonsai.uno/core#hasTemporalExtent>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "Temporal extent for an activity."@en ;
+  rdfs:comment "Specifies the temporal extent for an activity."@en ;
   rdfs:domain bont:Activity ;
   rdfs:label "temporal extent"@en ;
   rdfs:range time:ProperInterval .
@@ -178,7 +179,7 @@ xsd:float a rdfs:Datatype .
 
 <http://ontology.bonsai.uno/core#hasLocation>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "The location in which an activity took place or agent is located."@en ;
+  rdfs:comment "Specifies the location of an Activity or Agent"@en ;
   rdfs:domain [ rdfs:type owl:Class ;
                    owl:unionOf ( bont:Activity
                                  bont:Agent
@@ -190,21 +191,21 @@ xsd:float a rdfs:Datatype .
 
 <http://ontology.bonsai.uno/core#isProportionalTo>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "The reference unit to which the quantity of the Flow is proportional."@en ;
+  rdfs:comment "Specifies the reference unit to which the quantity of the Flow is proportional."@en ;
   rdfs:domain bont:BalanceableProperty ;
   rdfs:label "proportional to"@en ;
   rdfs:range bont:ReferenceUnit .
 
 <http://ontology.bonsai.uno/core#hasBalanceableProperty>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "The Balanceable property refers to the measure (and quantity) of the flows that follow the law of conservation. Eg: Mass, Energy. This does not include units such as volume, number of units, etc."@en ;
+  rdfs:comment "Specifies that the quantity used to measure flows that follows a conservation law."@en ;
   rdfs:domain bont:Flow ;
   rdfs:label "has balanceable property"@en ;
   rdfs:range bont:BalanceableProperty . 
 
 <http://ontology.bonsai.uno/core#hasPropertyType>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "refers to types of quantitites that follow the law of conservation."@en ;
+  rdfs:comment "Specifies types of quantities that are classified as BalanceableProperty"@en ;
   rdfs:domain bont:BalanceableProperty ;
   rdfs:label "property type"@en ;
   rdfs:range bont:BalanceablePropertyType .
@@ -212,7 +213,7 @@ xsd:float a rdfs:Datatype .
 
 <http://ontology.bonsai.uno/core#hasReferenceFlowObject>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "The flow object referenced by the reference unit."@en ;
+  rdfs:comment "Specifies the flow object referenced by the reference unit."@en ;
   rdfs:domain bont:ReferenceUnit ;
   rdfs:label "references flow object"@en ;
   rdfs:range bont:FlowObject .
