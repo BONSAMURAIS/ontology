@@ -83,7 +83,7 @@
 
 <http://ontology.bonsai.uno/core#BalanceablePropertyType>
   a owl:Class ;
-  rdfs:comment "Contains the instances of BalanceableProperty such as dry mass, wet mass, elemental mass, person-time, monetary value."@en ;
+  rdfs:comment "Contains the labels of BalanceableProperty such as dry mass, wet mass, elemental mass, person-time, monetary value."@en ;
   rdfs:label "Balanceable Property Type"@en ;
   rdfs:subClassOf skos:ConceptScheme, om2:Quantity .
 
@@ -153,7 +153,7 @@ xsd:float a rdfs:Datatype .
 
 <http://ontology.bonsai.uno/core#hasActivityType>
   a owl:ObjectProperty ;
-  rdfs:comment "Specifies the ActivityType that is an instance of the Activity."@en ;
+  rdfs:comment "Specifies the label of an Activity."@en ;
   rdfs:domain bont:Activity ;
   rdfs:label "activity type"@en ;
   rdfs:range bont:ActivityType ;
@@ -191,21 +191,21 @@ xsd:float a rdfs:Datatype .
 
 <http://ontology.bonsai.uno/core#isProportionalTo>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "Specifies the reference unit to which the quantity of the Flow is proportional."@en ;
+  rdfs:comment "Specifies the reference unit that the amount of a BalanceableProperty of a Flow is proportional to."@en ;
   rdfs:domain bont:BalanceableProperty ;
   rdfs:label "proportional to"@en ;
   rdfs:range bont:ReferenceUnit .
 
 <http://ontology.bonsai.uno/core#hasBalanceableProperty>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "Specifies that the quantity used to measure flows that follows a conservation law."@en ;
+  rdfs:comment "Specifies the  Measure of a Flow when this Measure is a BalanceableProperty, i.e. when it follows a conservation law."@en ;
   rdfs:domain bont:Flow ;
   rdfs:label "has balanceable property"@en ;
   rdfs:range bont:BalanceableProperty . 
 
 <http://ontology.bonsai.uno/core#hasPropertyType>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "Specifies types of quantities that are classified as BalanceableProperty"@en ;
+  rdfs:comment "Specifies the dimension (Quantity) of a Measure that is classified as a BalanceableProperty."@en ;
   rdfs:domain bont:BalanceableProperty ;
   rdfs:label "property type"@en ;
   rdfs:range bont:BalanceablePropertyType .
@@ -213,7 +213,7 @@ xsd:float a rdfs:Datatype .
 
 <http://ontology.bonsai.uno/core#hasReferenceFlowObject>
   a owl:FunctionalProperty, owl:ObjectProperty ;
-  rdfs:comment "Specifies the flow object referenced by the reference unit."@en ;
+  rdfs:comment "Specifies a FlowObject that functions as the ReferenceUnit for a BalanceableProperty measure."@en ;
   rdfs:domain bont:ReferenceUnit ;
   rdfs:label "references flow object"@en ;
   rdfs:range bont:FlowObject .
