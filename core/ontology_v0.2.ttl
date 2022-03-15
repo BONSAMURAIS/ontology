@@ -26,9 +26,9 @@
   foaf:homepage <http://ontology.bonsai.uno/core/documentation.html> ;
   ns0:preferredNamespacePrefix "bont" ;
   ns0:preferredNamespaceUri "http://ontology.bonsai.uno/core#" ;
-  rdfs:isDefinedBy <http://ontology.bonsai.uno/core/ontology_v0.1.rdf> ;
-  owl:versionInfo "Version 0.2 - 2020-04-23"@en ;
-  dc:modified "2020-04-23"^^xsd:date ;
+  rdfs:isDefinedBy <http://ontology.bonsai.uno/core/ontology_v0.2.rdf> ;
+  owl:versionInfo "Version 0.2 - 2022-03-15"@en ;
+  dc:modified "2022-03-15"^^xsd:date ;
   dc:publisher "bonsai.uno" ;
   dc:creator <http://bonsai.uno/foaf/bonsai.rdf#bonsai> ;
   dc:contributor "Matteo Lissandrini", "Agneta Ghose", "Bo Weidemma" ;
